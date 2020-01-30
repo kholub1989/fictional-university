@@ -8,8 +8,8 @@ function pageBanner($args = NULL) {
     $args['subtitle'] = get_field('page_banner_subtitle');
   }
   if (!$args['photo']) {
-    if (get_field('page_banner_background_image')) {
-      $args['photo'] = get_field('page_banner_background_image')['sizes']['pageBanner'];
+    if (get_field('page_baner_background_image')) {
+      $args['photo'] = get_field('page_baner_background_image')['sizes']['pageBanner'];
     } else {
       $args['photo'] = get_theme_file_uri('/images/ocean.jpg');
     }
