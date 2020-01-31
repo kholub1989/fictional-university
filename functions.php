@@ -1,4 +1,7 @@
 <?php
+require 'vendor/autoload.php';
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 
 function pageBanner($args = NULL) {
   if (!$args['title']) {
@@ -70,3 +73,11 @@ function university_adjust_queries($query) {
 }
 
 add_action('pre_get_posts', 'university_adjust_queries');
+
+function universityMapKey($api) {
+  $api['key'] = getenv('API_KEY');
+  return $api;
+}
+
+add_filter('acf/fields/google_map/api', 'universityMapKey');
+
