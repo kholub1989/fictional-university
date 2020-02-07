@@ -1,4 +1,5 @@
 <?php
+require get_theme_file_path('./inc/search-route.php');
 require 'vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
